@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c65d1cc5dcab7354080d8fce7cd664ea, type: 3}
+  m_Name: Test
+  m_EditorClassIdentifier: 
+  LandPartsDistance: 5
+  LineLength: 2
+  Frequence: 10
+  MinElevation: -1
+  MaxElevation: 1.5
+  LandPartsBeforeAltar: 4
+  LandPartsBeforeBoss: 9
+  SkyColor: {r: 0.011764706, g: 0.05882353, b: 0.08627451, a: 1}
+  CloudBackColor: {r: 0.03529412, g: 0.12941177, b: 0.19215688, a: 1}
+  CloudMiddleColor: {r: 0.054901965, g: 0.18039216, b: 0.25882354, a: 1}
+  CloudFrontColor: {r: 0.098039225, g: 0.27058825, b: 0.38431376, a: 1}
+  TreeColor: {r: 0.043137256, g: 0.13333334, b: 0.19607845, a: 1}
+  FoliageColor: {r: 0.20392159, g: 0.40000004, b: 0.5294118, a: 1}
+  StructureColor: {r: 0.2627451, g: 0.5019608, b: 0.65882355, a: 1}
+  StructureColor2: {r: 0.3372549, g: 0.50980395, b: 0.6313726, a: 1}
+  GroundColor: {r: 0.023529414, g: 0.08235294, b: 0.1254902, a: 1}
+  DustColor: {r: 0.2627451, g: 0.5019608, b: 0.65882355, a: 1}
+  FoesColor: {r: 0.7607844, g: 0.8431373, b: 0.9921569, a: 1}
+  FoesColor2: {r: 0.43137258, g: 0.5294118, b: 0.7058824, a: 1}
+  BossLandPart: {fileID: 9099034362371131788, guid: 613d5e22b4829ed4ba81c1b00ddef15e, type: 3}
+  Foes:
+  - Enabled: 1
+    Cost: 3
+    Foe: {fileID: 7515721767965040899, guid: 4c9fbd31d3de04041a62b4d05ecde372, type: 3}
+  - Enabled: 1
+    Cost: 4
+    Foe: {fileID: 5188431319333256929, guid: 5c61a8c773fd6d54fbc04ecb2c09674e, type: 3}
+  - Enabled: 1
+    Cost: 5
+    Foe: {fileID: 2754869064559241434, guid: 0fec69ffddde7ca45af293f0382ac5ba, type: 3}
+  - Enabled: 0
+    Cost: 7
+    Foe: {fileID: 5188431319333256929, guid: 7b546032dcc02d54b8312702c3a890bc, type: 3}
+  - Enabled: 0
+    Cost: 8
+    Foe: {fileID: 7783769034969427455, guid: ab06ffbe2e5fbe7458d69828b9abb16c, type: 3}
+  - Enabled: 0
+    Cost: 2
+    Foe: {fileID: 7783769034969427455, guid: 19fe56fde7f204640aa168c158b537ea, type: 3}
+  LandParts:
+  - {fileID: 2529503198547882843, guid: 328ee60a9bbd8e44191e6614983f0e3e, type: 3}
+  - {fileID: 2529503198547882843, guid: 8b2e35ec4b0055547acdaa59a468b655, type: 3}
+  - {fileID: 2529503198547882843, guid: a00feb6996c3e2b4499e1fa490a31799, type: 3}
+  - {fileID: 2529503198547882843, guid: 0c3e8c0b4d3dfd34f8fb2ea1fc8b6c08, type: 3}
+  - {fileID: 2529503198547882843, guid: 4ad79a68a7d64f24db0e4013866b93cd, type: 3}
+  - {fileID: 2529503198547882843, guid: c8e711efd5bca4e418108f4c19221a6f, type: 3}
+  - {fileID: 2529503198547882843, guid: 13fc4562638441f4ea8da798b317a1dc, type: 3}
+  - {fileID: 2529503198547882843, guid: b5cbdfcf6fbc00347b2933eb6368a326, type: 3}
+  - {fileID: 2529503198547882843, guid: 60515642f8c9d0544ac6f3044e07d171, type: 3}
+  FoliagePrefab: {fileID: 8396670282546338688, guid: 4ae22a68b1cf2b042a3e697317764f7e, type: 3}
+  TreePrefab: {fileID: -5215722530261213186, guid: 56b581f858be8fa4f86dc01348cae687, type: 3}

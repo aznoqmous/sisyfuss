@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags: []
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Ground
+  - Water
+  - UI
+  - Terrain
+  - Chain
+  - Projectiles
+  - Enemies
+  - Pods
+  - AntiProjectiles
+  - Loots
+  - Player
+  - GroundCheck
+  - Walkable
+  - Ball
+  - CollideWithGround
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Tree
+    uniqueID: 386716333
+    locked: 0
+  - name: Structures
+    uniqueID: 491142697
+    locked: 0
+  - name: Ball
+    uniqueID: 1090332731
+    locked: 0
+  - name: Player
+    uniqueID: 103188711
+    locked: 0
+  - name: Terrain
+    uniqueID: 3941123279
+    locked: 0
+  - name: TerrainOutline
+    uniqueID: 3755953107
+    locked: 0
+  - name: FrontClouds
+    uniqueID: 3814682999
+    locked: 0
+  - name: Statuses
+    uniqueID: 2511187171
+    locked: 0

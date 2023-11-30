@@ -1,0 +1,4 @@
+{
+  "dependencies": {
+    "com.nol1fe.delaunator": "https://github.com/nol1fe/delaunator-sharp.git?path=DelaunatorSharp.Unity",
+}
