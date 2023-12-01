@@ -5345,7 +5345,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _collider: {fileID: 8868503682665996290}
-  _health: 50
+  _health: 100
   _damageParticleSystem: {fileID: 4299794564656207629}
   _spriteObject: {fileID: 8868503682514101490}
   _spriteRenderers:

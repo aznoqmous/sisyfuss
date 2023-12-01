@@ -29,6 +29,9 @@ public enum UpgradeType
     LinkDamage,
     StoneLaser,
 
+    Gravity,
+    Quake,
+    Trail,
 
     MegaThrow,
 

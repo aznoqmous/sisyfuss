@@ -103,8 +103,16 @@ public class Player : MonoBehaviour
     void Update()
     {
         /* Inputs */
-        if (Input.GetKeyDown(KeyCode.Joystick1Button0)) _isMouseControl = false;
-        if(Input.GetMouseButtonDown(0)) _isMouseControl = true;
+        if (Input.GetKeyDown(KeyCode.Joystick1Button0))
+        {
+            _isMouseControl = false;
+            MousePointer.Instance.SetState(_isMouseControl);
+        }
+        if (Input.GetMouseButtonDown(0))
+        {
+            _isMouseControl = true;
+            MousePointer.Instance.SetState(_isMouseControl);
+        }
         _movement.x = Input.GetAxisRaw("Horizontal");
         _movement.y = Input.GetAxisRaw("Vertical");
         if (Input.GetKey(KeyCode.Q)) _movement.x -= 1;
@@ -369,6 +377,7 @@ public class Player : MonoBehaviour
 
             case UpgradeType.MaxHealth:
                 _maxHealth++;
+                GameManager.Instance.UpdateHealthContainers();
                 Heal(1);
                 break;
             case UpgradeType.LinkLength:

@@ -8,7 +8,7 @@ public class SettingsPanelUI : MonoBehaviour
     public static SettingsPanelUI Instance;
     void Awake()
     {
-        Instance = this;
+        if(Instance == null) Instance = this;
     }
     private void Start()
     {

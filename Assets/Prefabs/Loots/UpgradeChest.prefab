@@ -829,7 +829,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4977020625356886784, guid: ad85a52a2a8e70644ad39100ca6c108e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.13
+      value: 0.14
       objectReference: {fileID: 0}
     - target: {fileID: 4977020625356886787, guid: ad85a52a2a8e70644ad39100ca6c108e, type: 3}
       propertyPath: m_Sprite
@@ -895,9 +895,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 323eabadd5fb7ba4dbd2c1681fd48fe4, type: 2}
   - {fileID: 11400000, guid: 24e4bb2ac3849754d98dc1675197a4db, type: 2}
   - {fileID: 11400000, guid: de56f90eb5b400c4bb434d1ead64960c, type: 2}
-  - {fileID: 11400000, guid: 396673a4124f17042af9ebb391a74d38, type: 2}
   - {fileID: 11400000, guid: 4ca598871b5539a49a332e12d31f4686, type: 2}
   - {fileID: 11400000, guid: 6afbc3d0a3bff5546a9a3b7f532f1f27, type: 2}
+  - {fileID: 11400000, guid: 91c0f53bdeab36e45941f1a677ae174d, type: 2}
+  - {fileID: 11400000, guid: 91c0f53bdeab36e45941f1a677ae174d, type: 2}
   _costGroup: {fileID: 885475366}
   _costText: {fileID: 358490787}
   _upgradeGroup: {fileID: 916974238}

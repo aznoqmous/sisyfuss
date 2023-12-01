@@ -115,9 +115,9 @@ ParticleSystem:
     enabled: 1
     startLifetime:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 5
-      minScalar: 5
+      minScalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -4917,6 +4917,7 @@ GameObject:
   - component: {fileID: 7583290873688288968}
   - component: {fileID: 4315009591962785848}
   - component: {fileID: 7583290873688288970}
+  - component: {fileID: 126313414728686975}
   m_Layer: 0
   m_Name: StartingRoom
   m_TagString: Untagged
@@ -5084,6 +5085,21 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!114 &126313414728686975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7583290873688288971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdfe4c40a94df644a904ba0a85f47209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spriteRenderers: []
+  _particleSystem: {fileID: 6309169686861611892}
+  _colorType: 9
 --- !u!1001 &741642980858221013
 PrefabInstance:
   m_ObjectHideFlags: 0

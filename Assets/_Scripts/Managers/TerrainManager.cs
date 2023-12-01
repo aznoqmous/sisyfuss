@@ -13,6 +13,7 @@ public class TerrainManager : MonoBehaviour
     LineRenderer _lineRenderer;
 
     float _currentPoint = 0;
+    float _totalPoint = 0;
 
     [SerializeField] ScriptableWorld _pastWorld;
     [SerializeField] ScriptableWorld _currentWorld;
@@ -59,8 +60,7 @@ public class TerrainManager : MonoBehaviour
     public float UpgradeChestCount { get { return _upgradeChestCount; } set { _upgradeChestCount = value;  } } 
     float _nextUpgradeChestDistance { get { return GameManager.Instance.Seed % 30f + 100f + 100f * (_upgradeChestCount); } }
     public bool CanSpawnUpgradeChest { get {
-            Debug.Log(_currentPoint + " " + _nextUpgradeChestDistance);
-            return _currentPoint > _nextUpgradeChestDistance; 
+            return _totalPoint > _nextUpgradeChestDistance; 
         } }
 
     private void Start()
@@ -120,7 +120,10 @@ public class TerrainManager : MonoBehaviour
 
         /* Move cloud */
         float targetPositionX = Player.Instance.transform.position.x - 60f;
-        if (_clouds.position.x < targetPositionX) _clouds.position = new Vector3(targetPositionX, _clouds.position.y, 0);
+        Vector3 position = _clouds.position;
+        if(position.x < targetPositionX) position.x = targetPositionX;
+        position.y = Mathf.Lerp(position.y, Player.Instance.transform.position.y, Time.deltaTime * 10f);
+        _clouds.position = position;
         /*_clouds.position = Vector3.Lerp(
             _clouds.position, 
             new Vector3(_clouds.position.x + 1f, Player.Instance.transform.position.y, 0),
@@ -133,6 +136,7 @@ public class TerrainManager : MonoBehaviour
     
     void GenerateNextPoint()
     {
+        _currentPoint++;
         Vector3 npoint = GetNextPoint();
         AddPoint(npoint);
 
@@ -154,7 +158,7 @@ public class TerrainManager : MonoBehaviour
             return;
         }
 
-        if (_currentPoint > _nextLandPartDistance)
+        if (_totalPoint > _nextLandPartDistance)
         {
             if (_landPartCount >= _landPartCountBeforeBoss && !_isBossFight)
             {
@@ -197,7 +201,7 @@ public class TerrainManager : MonoBehaviour
 
     void AddPoint(Vector3 point)
     {
-        _currentPoint++;
+        _totalPoint++;
         point.z = Random.Range(-8f, 0f);
 
         _lastPoint = _points[_points.Count - 1];

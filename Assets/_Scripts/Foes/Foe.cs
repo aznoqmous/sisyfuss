@@ -48,15 +48,17 @@ public class Foe : MonoBehaviour
         _material = _spriteRenderers[0].material;
         foreach (SpriteRenderer sr in _spriteRenderers)
         {
-            sr.color = Color.white;
+            //sr.color = Color.white;
             sr.material = _material;
         }
-        _material.SetColor("_Color", _color);
+        //_material.SetColor("_Color", _color);
     }
     private void Start()
     {
         _health *= GameManager.Instance.Difficulty;
         _currentHealth = _health;
+
+        EntityManager.Instance.Add(this);
     }
 
     private void Update()
@@ -107,7 +109,7 @@ public class Foe : MonoBehaviour
     void Erase()
     {
         _spriteObject.SetActive(false);
-
+        EntityManager.Instance.Remove(this);
         Destroy(gameObject, 1f);
     }
 

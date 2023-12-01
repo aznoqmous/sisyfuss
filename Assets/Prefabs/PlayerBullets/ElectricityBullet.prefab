@@ -47,9 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bff33fefc1a1844f8c762345240b461, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rebounds: 4
+  _rebounds: 1
   _speed: 50
-  _distance: 100
+  _distance: 10
   _target: {fileID: 0}
   _hitClips:
   - {fileID: 8300000, guid: 2cd228391fa60304a8fbd83e488cb632, type: 3}

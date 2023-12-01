@@ -8,7 +8,7 @@ public class UpgradeListUI : MonoBehaviour
     public static UpgradeListUI Instance;
     private void Awake()
     {
-        Instance = this;
+        if(Instance == null) Instance = this;
     }
     void Start()
     {

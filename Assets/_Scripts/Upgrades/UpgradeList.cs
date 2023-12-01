@@ -20,6 +20,10 @@ public class UpgradeList
     public int LinkDamage = 0;
     public int StoneLaser = 0;
 
+    public int Gravity = 0;
+    public int Quake = 0;
+    public int Trail = 0;
+
     Dictionary<ScriptableUpgrade, int> _upgrades = new Dictionary<ScriptableUpgrade, int>();
     public void AddUpgrade(ScriptableUpgrade su)
     {
@@ -70,6 +74,15 @@ public class UpgradeList
                 break;
             case UpgradeType.StoneLaser:
                 StoneLaser++;
+                break;
+            case UpgradeType.Gravity:
+                Gravity++;
+                break;
+            case UpgradeType.Quake:
+                Quake++;
+                break;
+            case UpgradeType.Trail:
+                Trail++;
                 break;
             default:
                 break;

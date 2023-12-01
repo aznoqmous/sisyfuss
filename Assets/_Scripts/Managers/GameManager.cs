@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     [Header("World")]
     [SerializeField] string _stringSeed = "Sisyphus";
     [SerializeField] List<ScriptableWorld> _worlds;
-
+    
     public Unlocks Unlocks;
 
     int _worldIndex = 0;
@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     {
         if(Instance != null)
         {
-            Restart();
+            Instance.Restart();
             Destroy(gameObject);
             return;
         }
@@ -50,9 +50,10 @@ public class GameManager : MonoBehaviour
         _seed = StringToFloat(_stringSeed);
         _seedText.text = _stringSeed;
 
-        _distanceText.text = Mathf.FloorToInt(_distanceReached) + "m";
         _difficultyTime = 0f;
         _distanceReached = 0f;
+        _distanceText.text = Mathf.FloorToInt(_distanceReached) + "m";
+        _worldIndex = 0;
     }
 
     float _difficultyTime = 0f;

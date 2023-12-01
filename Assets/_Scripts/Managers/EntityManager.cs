@@ -13,7 +13,7 @@ public class EntityManager : MonoBehaviour
     }
 
     List<FoeCost> _foes = new List<FoeCost>();
-
+    List<Foe> _foesList = new List<Foe>();
     float _money = 0f;
     public float Money { get { return _money;  } }
     float _nextSpawn = 0f;
@@ -94,7 +94,17 @@ public class EntityManager : MonoBehaviour
 
     public Foe SpawnFoe(Foe foePrefab, Vector3 position)
     {
-        return Instantiate(foePrefab, position, Quaternion.identity, transform);
+        Foe foe = Instantiate(foePrefab, position, Quaternion.identity, transform);
+        return foe;
+    }
+
+    public void Add(Foe foe)
+    {
+        _foesList.Add(foe);
+    }
+    public void Remove(Foe foe)
+    {
+        _foesList.Remove(foe);
     }
 
     FoeCost PickAvailableFoe()
@@ -127,6 +137,30 @@ public class EntityManager : MonoBehaviour
         }
         return nearest;
     }
+
+    public Foe GetNearestFoe(Vector3 position)
+    {
+        float minDistance = -999f;
+        Foe nearest = null;
+        List<Foe> list = new List<Foe>(_foesList);
+
+        foreach (Foe foe in list)
+        {
+            if(foe == null)
+            {
+                _foesList.Remove(foe);
+                continue;
+            }
+            float distance = foe.transform.position.DistanceTo(position);
+            if (distance <= minDistance || minDistance < 0)
+            {
+                nearest = foe;
+                minDistance = distance;
+            }
+        }
+        return nearest;
+    }
+
 
     public void SetBoss(Boss boss)
     {

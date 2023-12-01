@@ -12,6 +12,13 @@ public class Electricity : MonoBehaviour
     [SerializeField] List<AudioClip> _hitClips;
     [SerializeField] Collider2D _collider;
     float _damages = 1f;
+
+    private void Start()
+    {
+        _distance = 10f + 2f * Player.Instance.UpgradeList.AirThunder;
+        _rebounds = Player.Instance.UpgradeList.AirThunder;
+    }
+
     public void SetDamages(float damages)
     {
         _damages = damages;

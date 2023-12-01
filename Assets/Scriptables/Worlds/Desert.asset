@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c65d1cc5dcab7354080d8fce7cd664ea, type: 3}
-  m_Name: Test 1
+  m_Name: Desert
   m_EditorClassIdentifier: 
   LandPartsDistance: 5
   LineLength: 2
@@ -28,9 +28,10 @@ MonoBehaviour:
   StructureColor: {r: 0.19607845, g: 0.15294118, b: 0.043137256, a: 1}
   StructureColor2: {r: 0.38679248, g: 0.31909618, b: 0.13683696, a: 1}
   GroundColor: {r: 0.3962264, g: 0.35436544, b: 0.12896048, a: 1}
-  DustColor: {r: 0.76470596, g: 0.7019608, b: 0.37254903, a: 1}
-  FoesColor: {r: 0.9433962, g: 0.70046353, b: 0.4672481, a: 1}
-  FoesColor2: {r: 0.8867924, g: 0.47513977, b: 0.27189392, a: 1}
+  DustColor: {r: 0.3962264, g: 0.35430232, b: 0.12896048, a: 1}
+  FoesColor: {r: 0.34117648, g: 0.32790568, b: 0.09803922, a: 1}
+  FoesColor2: {r: 0.29172644, g: 0.3207547, b: 0.08018868, a: 1}
+  ChestColor: {r: 0.5943396, g: 0.3774896, b: 0.23268954, a: 1}
   BossLandPart: {fileID: 9099034362371131788, guid: 613d5e22b4829ed4ba81c1b00ddef15e, type: 3}
   Foes:
   - Enabled: 0
@@ -52,7 +53,6 @@ MonoBehaviour:
   - {fileID: 2529503198547882843, guid: 328ee60a9bbd8e44191e6614983f0e3e, type: 3}
   - {fileID: 2529503198547882843, guid: 8b2e35ec4b0055547acdaa59a468b655, type: 3}
   - {fileID: 2529503198547882843, guid: 60515642f8c9d0544ac6f3044e07d171, type: 3}
-  - {fileID: 2529503198547882843, guid: a00feb6996c3e2b4499e1fa490a31799, type: 3}
   - {fileID: 2529503198547882843, guid: b5cbdfcf6fbc00347b2933eb6368a326, type: 3}
   - {fileID: 2529503198547882843, guid: 0c3e8c0b4d3dfd34f8fb2ea1fc8b6c08, type: 3}
   - {fileID: 2529503198547882843, guid: 4ad79a68a7d64f24db0e4013866b93cd, type: 3}

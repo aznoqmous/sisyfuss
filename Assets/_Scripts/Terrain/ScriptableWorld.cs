@@ -27,6 +27,7 @@ public class ScriptableWorld : ScriptableObject
     public Color DustColor;
     public Color FoesColor;
     public Color FoesColor2;
+    public Color ChestColor;
 
 
     [Header("Enemies")]

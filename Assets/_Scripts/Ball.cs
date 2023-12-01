@@ -39,6 +39,11 @@ public class Ball : MonoBehaviour
     {
         var emission = _groundParticles.emission;
         emission.enabled = true;
+
+        emission = _laserParticles.emission;
+        emission.enabled = _laserCharges > 0;
+
+        _gravity.SetState(false);
     }
 
     public void Update()
@@ -54,13 +59,12 @@ public class Ball : MonoBehaviour
         var main = _groundParticles.main;
         main.startColor = TerrainManager.Instance.GetDustColorAtPosition(transform.position);
 
-        if (_isAttached)
-        {
-            _lineRenderer.transform.position = (Player.Instance.transform.position - transform.position) / 2 + transform.position;
-        }
-
+        
+        _lineRenderer.transform.position = (Player.Instance.transform.position - transform.position) / 2 + transform.position;
         HandleAirThunder();
         HandleRollFire();
+        HandleGravity();
+        HandleLaser();
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -70,6 +74,7 @@ public class Ball : MonoBehaviour
         {
             Vector3 velocity = _rigidBody.velocity;
             velocity.y = collision.relativeVelocity.y * _bounciness;
+            velocity.y = Mathf.Min(velocity.y, 30f);
             _rigidBody.velocity = velocity;
         }
         
@@ -209,6 +214,56 @@ public class Ball : MonoBehaviour
     public void EnableLinkDamage(bool state = true)
     {
         _linkDamage.gameObject.SetActive(state);
+    }
+
+    [Header("Gravity")]
+    [SerializeField] Gravity _gravity;
+    public void HandleGravity()
+    {
+        if (Player.Instance.UpgradeList.Gravity <= 0f) return;
+        _gravity.SetState(!_isGrounded && !Player.Instance.IsCarrying);
+        _gravity.SetSize(Mathf.Pow(1.05f, Player.Instance.UpgradeList.Gravity));
+    }
+
+    [Header("Laser")]
+    [SerializeField] Laser _laserPrefab;
+    [SerializeField] ParticleSystem _laserParticles;
+
+    float _laserCharge = 0f;
+    float _laserTimeout = 1f;
+    float _lastLaserTime = 0f;
+    float _laserDistance = 10f;
+    float _maxLaserCharges = 1f;
+    int _laserCharges = 0;
+    public void HandleLaser()
+    {
+        float level = Player.Instance.UpgradeList.StoneLaser;
+        if(level <= 0f) return;
+        _laserDistance = 10f + level * 2f;
+        _maxLaserCharges = level;
+        _laserTimeout = 1f / Mathf.Pow(1.05f, level-1);
+        if (Player.Instance.IsCarrying && _laserCharges < _maxLaserCharges)
+        {
+            _laserCharge = Mathf.Min(1, _laserCharge + Time.deltaTime / 2f);
+        }
+        else _laserCharge = 0f;
+
+        if (_laserCharge >= 1f / Mathf.Pow(1.05f, level-1))
+        {
+            _laserCharges++;
+            _laserCharge = 0;
+        }
+        var emission = _laserParticles.emission;
+            emission.enabled = _laserCharges > 0;
+        if (_laserCharges <= 0) return;
+        if (Time.time - _lastLaserTime < _laserTimeout) return;
+        Foe nearestT = EntityManager.Instance.GetNearestFoe(transform.position);
+        if (nearestT == null) return;
+        if ((nearestT.transform.position - transform.position).magnitude > _laserDistance) return;
+        _lastLaserTime = Time.time;
+        Laser newLaser = Instantiate(_laserPrefab, transform.position, Quaternion.identity);
+        newLaser.AddForce((nearestT.transform.position - transform.position).normalized * 2000f);
+        _laserCharges--;
     }
 
     public void Detach()

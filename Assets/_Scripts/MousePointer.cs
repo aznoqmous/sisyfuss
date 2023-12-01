@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class MousePointer : MonoBehaviour
 {
+    public static MousePointer Instance;
+    private void Awake()
+    {
+        if (Instance == null) Instance = this;
+        else Destroy(gameObject);
+    }
     void Start()
     {
         Cursor.visible = false;
@@ -13,5 +19,10 @@ public class MousePointer : MonoBehaviour
     void Update()
     {
         transform.position = Input.mousePosition;
+    }
+
+    public void SetState(bool state)
+    {
+        gameObject.SetActive(state);
     }
 }

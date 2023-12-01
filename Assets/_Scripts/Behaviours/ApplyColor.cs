@@ -49,6 +49,9 @@ public class ApplyColor : MonoBehaviour
             case ColorType.FoesColor2:
                 _color = GameManager.Instance.CurrentWorld.FoesColor2;
                 break;
+            case ColorType.ChestColor:
+                _color = GameManager.Instance.CurrentWorld.ChestColor;
+                break;
             default:
                 break;
         }
@@ -79,5 +82,6 @@ public enum ColorType
     GroundColor,
     DustColor,
     FoesColor,
-    FoesColor2
+    FoesColor2,
+    ChestColor,
 }
